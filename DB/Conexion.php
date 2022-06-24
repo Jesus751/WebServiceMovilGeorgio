@@ -3,6 +3,7 @@
     class Conexi{
         public $host;
         public $user;
+		public $port;
         public $pass;
         public $dbname;
         public $con;
@@ -11,7 +12,7 @@
         {
             $this-> host = "localhost";
             $this-> user = "root";
-            $this-> pass = "";
+            $this-> pass = "admin2";
             $this-> dbname= "georgio";
             $this-> con = new mysqli($this->host,$this-> user, $this-> pass, $this-> dbname);
             if ($this->con->connect_error){

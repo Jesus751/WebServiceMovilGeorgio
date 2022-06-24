@@ -8,7 +8,7 @@
     public function __construct()
     {
         $this-> user = array();
-        $this->db = new PDO('mysql:host=localhost;dbname=georgio', "root", "");
+        $this->db = new PDO('mysql:host=localhost;dbname=georgio;port=3307', "root", "admin2"  );
     }
 
     public function insetarUsuario ($tabla, $data){
@@ -35,7 +35,7 @@
 
     }
     public function editarUsuario( $tabla, $data, $condicion){
-        $consulta  = "update ".$tabla." set ". $data ." where ".$condicion;
+        $consulta  = "UPDATE ".$tabla." SET ". $data ." WHERE ".$condicion;
         $resultado = $this->db->query($consulta);
         if ($resultado) { return true; } else { return false; }
     }

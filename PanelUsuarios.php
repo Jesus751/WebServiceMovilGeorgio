@@ -11,7 +11,8 @@ if(!empty($_POST['opcion'])){
         case 3:{ $dato = $user-> consultarUsuarios(); };break;
         case 4:{ $dato = $user-> validarUsuario(); };break;
         case 5:{ $dato = $user-> editarUsuario(); };break;
-        case 6:{ $dato = $user-> cambiarStatusUsuario(); };break;  
+        case 6:{ $dato = $user-> cambiarStatusUsuarioalta(); };break;  
+        case 7:{ $data =  $user -> cambiarStatusUsuariobaja();}break;
     }
 
 

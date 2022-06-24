@@ -10,11 +10,10 @@ if(!empty($_POST['opcion'])){
         case 1:{$dato  = $check -> agregarCheck();}; break;
         case 2: {$dato = $check -> editarCheck();}; break;
         case 3: {$dato = $check -> eliminarCheck();}; break;
-        case 4: {$dato = $check -> agregarDecriptionItem();break;};
-        case 5: {$dato = $check -> consultar();break;};
-        case 6: {$dato = $check -> consultarTodosLosCheckList(); break;}};
+        case 4: {$dato = $check -> consultarTodosLosCheckList();}break;
+    } 
 
-    }
+}
    
 
 ?>
