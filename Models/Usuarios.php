@@ -7,8 +7,8 @@
     
     public function __construct()
     {
-        $this-> user = array();
-        $this->db = new PDO('mysql:host=localhost;dbname=georgio;port=3307', "root", "admin2"  );
+        $this-> check = array();
+        $this->db = new PDO('mysql:host=localhost;dbname=georgio;port=3306', "jesus", "georgio21" );
     }
 
     public function insetarUsuario ($tabla, $data){
@@ -34,6 +34,7 @@
         return $this->user;
 
     }
+
     public function editarUsuario( $tabla, $data, $condicion){
         $consulta  = "UPDATE ".$tabla." SET ". $data ." WHERE ".$condicion;
         $resultado = $this->db->query($consulta);
@@ -44,6 +45,15 @@
         $con = $update;
         $res = $this->db->query($con);
         if ($res) {return true;  } else { return false; }
+    }
+    
+    public function consultarUsuari($tabla, $condicion, $condicon2){
+        $con = "SELECT * FROM ".$tabla." WHERE ".$condicion." AND ".$condicon2.";";
+        $res = $this->db->query($con);
+        while($filas = $res->FETCHALL(PDO::FETCH_ASSOC)) {
+            $this->check['Consulta'] = $filas;
+        }
+        return $this->check;
     }
 
 

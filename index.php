@@ -86,6 +86,17 @@
             <hr>
             <hr>
             <div>
+                <h3>Consultar Solo Un Usuario</h3>
+                <form action="PanelUsuarios.php" method="post">
+                    <input type="hidden" name="opcion" value="8">
+                    <input type="number" name="idusuario" placeholder="Id Usuario">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            <hr>
+            <hr>
+            <hr>
+            <div>
                 <h3>VALIDAR USUARIO</h3>
                 <form action="PanelUsuarios.php" method="post">
                     <input type="hidden" name="opcion" value="4">
@@ -183,8 +194,19 @@
         <div>
             <form action="PaneltemsMecanico.php" method="post">
                 <input type="hidden" name="opcion" value="4">  
-                <div><button>CONSULTAR ITEMS DISPONIBLES </button></div>
+                <div><button>CONSULTAR TODOS LOS ITEMS DISPONIBLES </button></div>
             </form>       
+        </div>
+        <hr>
+        <hr>
+        <hr>
+        <div>
+            <h2>Concultar solo un Item</h2>
+            <form action="PaneltemsMecanico.php" method="post">
+            <input type="hidden" name="opcion" value="5"> 
+            <input type="number" name="idItemm" placeholder="IDItem">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
         </div>
         <hr>
         <hr>
@@ -207,7 +229,7 @@
         <h3>Agregar Checck List</h3>
         <div>
             <?php
-                $db = new PDO ('mysql:host=localhost;dbname=georgio;port=3307', "root", "admin2");
+               $db = new PDO('mysql:host=localhost;dbname=georgio;port=3306', "jesus", "georgio21" );
                 $query = "SELECT iditem,categoria,status FROM item ORDER BY categoria ASC";
                 $resultado =  $db->query($query);
             ?>
@@ -236,7 +258,7 @@
         <hr>
         <div>
         <?php
-                $db = new PDO ('mysql:host=localhost;dbname=georgio;port=3307', "root", "admin2");
+                $db = new PDO('mysql:host=localhost;dbname=georgio;port=3306', "jesus", "georgio21" );
                 $query = "SELECT iditem,categoria,status FROM item ORDER BY categoria ASC";
                 $resultado =  $db->query($query);
             ?>
@@ -272,12 +294,27 @@
         <hr>
         <hr>
         <div>
-            <h3> Consultar CheckLis</h3>
+            <h3> Consultar Todos los CheckLis</h3>
             <form action="PanelCheckList.php" method="post">
                 <input type="hidden" name="opcion" value="4">  
                 <div><button>CONSULTAR Checklis DISPONIBLES </button></div>
             </form>      
         </div>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <div>
+            <h3>Consultar los check list por categoria</h3>
+            <form action="PanelCheckList.php" method="post">
+            <input type="hidden" name="opcion" value="5">
+            <input type="number" name="idctg" required placeholder="IdCate">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <hr>
+        <hr>
+        <hr>
     </div>
 </body>
 

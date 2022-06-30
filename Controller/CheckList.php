@@ -47,6 +47,13 @@ class CheckList{
         if($data){ echo json_encode($data); } else { echo "fallo";}
     }
 
+    function consultarUnCheckList(){
+        $idcatego= $_REQUEST['idctg'];
+        $checkli = new CheckLi();
+        $data = $checkli-> consultarCheck ("checklist", "estatus='alta'", "id_item=$idcatego");
+        if($data){ echo json_encode($data); } else { echo "fallo";}
+    }
+
 }
 
 

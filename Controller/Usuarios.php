@@ -86,8 +86,14 @@ class Usuarios {
         $usuario = new Usuario();
         $data = $usuario->Actualizar("UPDATE usuarios_movil SET status='alta' WHERE idUsuario_movil=$iduser;"); 
         if($data){ echo "exitoso"; } else { echo "fallo"; }
-
     }
+    function consultarUsuario(){
+        $idus= $_REQUEST['idusuario'];
+        $usuario = new Usuario();
+        $data = $usuario-> consultarUsuari ("usuarios_movil", "status='alta'", "idUsuario_movil=$idus");
+        if($data){ echo json_encode($data); } else { echo "fallo";}
+    }
+
 }
 
 ?>

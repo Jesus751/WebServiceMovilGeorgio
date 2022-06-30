@@ -44,7 +44,13 @@ class CheckItems{
         $data = $item-> consultaItems ("item","status='alta'");
         if($data){ echo json_encode($data); } else { echo "fallo";}
     }
-
+    function consultarUnItem(){
+        $idtemmm= $_REQUEST['idItemm'];
+        $item = new Mecani();
+        $data = $item-> consultarItem ("item", "status='alta'", "iditem=$idtemmm");
+        if($data){ echo json_encode($data); } else { echo "fallo";}
+    }
+ 
 }
 
 

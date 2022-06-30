@@ -11,6 +11,7 @@ if(!empty($_POST['opcion'])){
         case 2: {$dato = $check -> editarItem();} break;
         case 3: {$dato = $check -> eliminarItem();} break;
         case 4: {$dato = $check -> consultarTodosLosItems();} break;
+        case 5: {$dato = $check -> consultarUnItem();} break;
     }
 }
    
